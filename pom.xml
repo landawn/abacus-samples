@@ -28,14 +28,14 @@
 		<dependency>
 			<groupId>com.landawn</groupId>
 			<artifactId>abacus-common</artifactId>
-			<version>3.6.4</version>
+			<version>3.6.6</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.landawn</groupId>
 			<artifactId>abacus-jdbc</artifactId>
-			<version>3.2.18</version>
+			<version>3.2.19</version>
 			<scope>provided</scope>
 		</dependency>
 
