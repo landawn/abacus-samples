@@ -27,7 +27,7 @@ import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 class JWTTest extends TestBase {
 
     // The complete JWT representation, or compact serialization, is string consisting of
-    // three dot ('.') separated base64url-encoded parts in the form Header.Payload.Signature 
+    // three dot ('.') separated base64url-encoded parts in the form Header.Payload.Signature
     static final String jwt = "eyJraWQiOiJVcG1aRWlXVndlRDJXK2Q5aHd0SkJxS2ppQWowOWs3dU1vRFRhUXoxWUFBPSIsImFsZyI6IlJTMjU2In0"
             + ".eyJzdWIiOiI1Y2RhMmM2MS01Yjk2LTRhOTQtYWVjNS05NzQwMmQwYWVhMzEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfcFNjaEtCYnFvIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6ImhlY2hlbiIsImF1ZCI6IjM0MGY0ZGYzZGxjOXRsaDdsbnZramw0dmJuIiwiZXZlbnRfaWQiOiIwMjdkMzQ4OC0zOWQ2LTQyMjMtYWJjNy01OTk4MjA4ZDc1YTIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTU4NzEwMDY0NSwicGhvbmVfbnVtYmVyIjoiKzE0MDg1MDc5ODMzIiwiZXhwIjoxNTg3MjM2ODk3LCJpYXQiOjE1ODcyMzMyOTcsImVtYWlsIjoiZHJvcHJpbmNlQGdtYWlsLmNvbSJ9"
             + ".DJAQjrB9D2b3qs2EwR4Ts1xIi6azaQyXX4QSZQFaN3bUT9nIx-S2zzvOmInkn88mHhKlQ9FfuyVLrKE2C3SUOo9CE3sK6N26U7CM_RJiVqSh5IaUyRueD_9DShL1YvAfO_H8sIBTfQ6f6fmRarCoOIiD5b74kyYPxLnLkbDnxZFFuHlT8rydhNN9wKIxRE7D1H9ZLf8KJDbCw1m6TxiWDVB1qenD94aYdJXZO49QaGxGVVxLT6RGJQZiu22g6HR8El91K86hGkDgWY7b_u8kKawerC5remtRIUUSTSaIQnYiBa7M52MJ9jROxj0rxZwGfoudts3aTckcD7h7zk0A4w";
@@ -42,7 +42,7 @@ class JWTTest extends TestBase {
         N.println(N.toJSON(payload, true));
 
         N.println("====================================================");
-        jwks = HttpRequest.url(payload.get("iss") + "/.well-known/jwks.json").get();
+        jwks = HttpRequest.url(payload.get("iss") + "/.well-known/jwks.json").get(String.class);
         N.println(N.formatJSON(jwks));
     }
 
