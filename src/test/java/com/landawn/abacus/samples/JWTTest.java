@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import com.landawn.abacus.http.HttpRequest;
 import com.landawn.abacus.util.N;
+import com.landawn.abacus.util.Strings;
 import com.nimbusds.jose.JWSAlgorithm;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
@@ -35,8 +36,8 @@ class JWTTest extends TestBase {
     static final String jwks;
     static {
         final String[] parts = jwt.split("\\.");
-        Map<String, String> header = N.fromJSON(Map.class, N.base64DecodeToString(parts[0]));
-        Map<String, String> payload = N.fromJSON(Map.class, N.base64DecodeToString(parts[1]));
+        Map<String, String> header = N.fromJSON(Map.class, Strings.base64DecodeToString(parts[0]));
+        Map<String, String> payload = N.fromJSON(Map.class, Strings.base64DecodeToString(parts[1]));
 
         N.println(N.toJSON(header, true));
         N.println(N.toJSON(payload, true));
